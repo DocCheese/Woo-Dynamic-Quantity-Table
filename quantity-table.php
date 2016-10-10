@@ -1,12 +1,12 @@
 <?php
 
 /*
-Plugin Name: Woocommerce Dynamic Quantity Table Display
+Plugin Name: Woo Dynamic Quantity Table
 Plugin URI: https://idworks.com
 Description: Shows Dynamic Pricing table, to be used within conjunction with Woocommerce Dynamic Table Plugin.
 Author: Identity Works - Drew Teichman
-Version: 1.0
-Author URI: https://idworks.com
+Version: 1.1
+Author URI: https://idworks.com/
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
@@ -27,7 +27,7 @@ add_filter( 'woocommerce_get_price_html', 'omniwp_credit_dollars_price', 10, 2 )
 	function omniwp_credit_dollars_price( $price, $product ) {
  global $done;
 
-if (!is_shop() && !is_product_category() && !woocommerce_upsell_display()){
+if (!is_shop() && !is_product_category() && !woocommerce_upsell_display() && !is_front_page()){
 if (!$done) { 
   global $done; 
   $done = TRUE;
